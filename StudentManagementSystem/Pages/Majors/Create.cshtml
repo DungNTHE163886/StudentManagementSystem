@@ -1,0 +1,33 @@
+﻿@page
+@model StudentManagementSystem.Pages.Majors.CreateModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<h1>Create</h1>
+<h4>Major</h4>
+
+<div class="col-md-4">
+    <form method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="major.MajorId" class="control-label"></label>
+            <input asp-for="major.MajorId" class="form-control" />
+            <span asp-validation-for="major.MajorId" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="major.MajorName" class="control-label"></label>
+            <input asp-for="major.MajorName" class="form-control" />
+            <span asp-validation-for="major.MajorName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Create" class="btn btn-primary" />
+        </div>
+        
+    </form>
+</div>
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+

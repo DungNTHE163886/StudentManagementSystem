@@ -1,0 +1,39 @@
+﻿@page "/Classes"
+@model StudentManagementSystem.Pages.ManageClasses.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Class Name
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Class) {
+        <tr>
+            <td>
+                    <a asp-page="/ClassSubjects/Index" asp-route-ClassId="@item.ClassId">@item.ClassClassName</a>
+            </td>
+            <td>
+
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ClassId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ClassId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ClassId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
